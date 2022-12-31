@@ -26,6 +26,7 @@ const getSlots=async function(req,res){
         let center=req.query
         if(center){
             const findCenter=await slotModel.find(center)
+            if(findCenter.length==0)return res.status(200).send({status:true,msg:"No data found with this query"})
             return res.status(200).send({status:true,data:findCenter})
         }
 

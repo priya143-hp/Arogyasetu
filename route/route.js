@@ -7,7 +7,7 @@ const {slots,getSlots}=require("../controller/slotcontroller")
 
 
 Router.post("/user",creatuser)
-Router.post("/user",login)
+Router.post("/login",login)
 Router.post("/user/:userId",slotBook)
 Router.put("/user/:userId",slotDelete)
 

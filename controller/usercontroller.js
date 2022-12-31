@@ -1,5 +1,6 @@
 const userModel=require("../model/user")
 const slotModel=require("../model/slotmodel")
+const jwt = require('jsonwebtoken');
 
 const creatuser=async function(req,res){
     try{
@@ -22,6 +23,7 @@ const creatuser=async function(req,res){
 const login=async function(req,res){
     try{
         let data=req.body
+        let {phone,password}=data
 
        const login=await userModel.findOne({phone:phone})
        if(!login)return res.status(400).send({status:false,msg:"can't find any user with this mobile no"})
@@ -283,14 +285,5 @@ catch(err){
     res.status(500).send({status:false,msg:err.message})
 }
 }
-
-
-
-
-
-
-
-
-
 
 module.exports={creatuser,login,slotBook,slotDelete}
