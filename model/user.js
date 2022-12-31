@@ -10,13 +10,15 @@ const userSchema = new mongoose.Schema({
     first_dose:{
       status:{type:Boolean,default:false},
       slot:{type:String},
-      date:{type:Date}  
+      date:{type:String},
+      center_code:{type:Number}
   },
 
     second_dose:{
       status:{type:Boolean,default:false},
       slot:{type:String},
-      date:{type:Date}
+      date:{type:String},
+      center_code:{type:Number}
   
     },
     

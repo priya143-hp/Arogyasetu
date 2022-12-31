@@ -3,7 +3,7 @@ const mongoose= require("mongoose")
 const vaccineSchema= new mongoose.Schema({
     center:{type:String,required:true},
     center_code:{type:Number,required:true},
-    date:{type:Date,required:true},
+    date:{type:String,required:true},
     slot:[{
         time:{type:String},
         quantity:{type:Number,default:10}
