@@ -20,13 +20,13 @@ first dose of vaccine. Once the registered time slot is lapsed, the user should 
 considered as vaccinated for that registered dose (first/second).
 ● User can update/change his registered slot, till 24 hours prior to his registered
 slot time
+
+
 ## (for admin)
 ● Login using admin credentials (There won’t be any api for registering the admin.
 His credentials should be manually created in the database)
 ● Check the total users registered and [filter them by Age/Pincode/Vaccination
 status (none/First dose completed/All completed)] - Optional
-● Check the registered slots for the vaccine (first dose /second dose/total) on a
-given day
 ## Vaccine slot details
 ● Assume that vaccination drive is happening only from 1st June ‘21 to 30th June
 ‘21
