@@ -27,8 +27,6 @@ const userData=async function(req,res){
 if(data.hasOwnProperty("first")){
     if(data.first=="true"){data.first=true}
     else{data.first=false}
-
-    console.log(data)
  let newData=userDetails.filter(x=>x.first_dose.status==data.first)
 return res.status(200).send({sta:true,msg:`${newData.length} people found with this query`,data:newData})
 }
