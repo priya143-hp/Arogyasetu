@@ -27,6 +27,9 @@ slot time
 His credentials should be manually created in the database)
 ● Check the total users registered and [filter them by Age/Pincode/Vaccination
 status (none/First dose completed/All completed)] - Optional
+● Check the registered slots for the vaccine (first dose /second dose/total) on a
+given day
+
 
 ## Vaccine slot details
 ● Assume that vaccination drive is happening only from 1st June ‘21 to 30th June
