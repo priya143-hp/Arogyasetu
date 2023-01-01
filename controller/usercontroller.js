@@ -97,6 +97,7 @@ if([1,2].indexOf(dose)<0 ){
     const date2 = new Date(date);
     let diffTime = (date2 - date1)/ (1000 * 60 * 60)
     if(diffTime<0)return res.status(400).send({status:false , msg:"can't book vaccine in old date"})
+    if(diffTime==0)return res.status(400).send({status:false , msg:"can't book vaccine in same date"})
 
 
     const user=await userModel.findById(userId)
@@ -153,6 +154,7 @@ return res.status(201).send({status:true,msg:"slot booked successfully",data:upd
     const date2 = new Date(date);
     let diffTime = (date2 - date1)/ (1000 * 60 * 60)
     if(diffTime<0)return res.status(400).send({status:false , msg:"can't book vaccine in old date"})
+    if(diffTime==0)return res.status(400).send({status:false , msg:"can't book vaccine in same date"})
 
 
 const user=await userModel.findById(userId)
