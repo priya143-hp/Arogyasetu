@@ -77,7 +77,7 @@ if(query.hasOwnProperty("second")){
         let first=0
         for(i=0;i<slots.length;i++){
      
-            first+=first+slots[i].totalFirst
+            first+=slots[i].totalFirst
 
         }
         
