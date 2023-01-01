@@ -125,6 +125,14 @@ let newObj={
     date:date,
     center_code:center_code
 }
+
+
+//new
+let total=vaccineCenter.totalvaccine-1
+let totalfirst=vaccineCenter.totalFirst+1
+
+
+
     const updateUser=await userModel.findOneAndUpdate({_id:userId},{first_dose:newObj},{new:true})
 
     //slot update in slot model
@@ -136,7 +144,7 @@ let updatedData={
 
 availSlot.splice(index,1,updatedData)
 
-await slotModel.findOneAndUpdate({center_code:center_code,date:date},{slot:availSlot})
+await slotModel.findOneAndUpdate({center_code:center_code,date:date},{slot:availSlot,totalvaccine:total,totalFirst:totalfirst})
 return res.status(201).send({status:true,msg:"slot booked successfully",data:updateUser})
  }
 
@@ -195,10 +203,17 @@ const updateUser=await userModel.findOneAndUpdate({_id:userId},{second_dose:newO
         time:slot,
         quantity:(Vaccin_no-1)
     }
+
+
+
+//new
+let total=vaccineCenter.totalvaccine-1
+let totalSecond=vaccineCenter.totalSecond+1
+
     
     availSlot.splice(index,1,updatedData)
     
-    await slotModel.findOneAndUpdate({center_code:center_code,date:date},{slot:availSlot})
+    await slotModel.findOneAndUpdate({center_code:center_code,date:date},{slot:availSlot,totalvaccine:total,totalSecond:totalSecond})
 
     return res.status(201).send({status:true,msg:"slot book successfully",data:updateUser})
  }
@@ -281,9 +296,14 @@ let updateData={
     quantity:(Vaccin_no+1)
 }
 
+
+let total=vaccineCenter.totalvaccine+1
+let totalSecond=vaccineCenter.totalSecond-1
+
+
 availSlot.splice(index,1,updateData)
 
-await slotModel.findOneAndUpdate({center_code:center_code,date:date},{slot:availSlot})
+await slotModel.findOneAndUpdate({center_code:center_code,date:date},{slot:availSlot,totalvaccine:total,totalSecond:totalSecond})
 
 
     return res.status(200).send({status:true,msg:"your 2nd dose vaccination Slot deleted successfully ",data:updateUser})
@@ -349,9 +369,14 @@ let updateData={
     quantity:(Vaccin_no+1)
 }
 
+
+let total=vaccineCenter.totalvaccine+1
+let totalfirst=vaccineCenter.totalFirst-1
+
+
 availSlot.splice(index,1,updateData)
 
-await slotModel.findOneAndUpdate({center_code:center_code,date:date},{slot:availSlot})
+await slotModel.findOneAndUpdate({center_code:center_code,date:date},{slot:availSlot,totalvaccine:total,totalFirst:totalfirst})
 
     return res.status(200).send({status:true,msg:"your 1st dose vaccination Slot deleted successfully ",data:updateUser})
 
