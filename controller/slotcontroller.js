@@ -32,6 +32,9 @@ const getSlots=async function(req,res){
     try {
         let center=req.query
         if(center){
+          if(center.hasOwnProperty("date"))
+            {if(!isValidDate(center.date))return res.status(400).send({status:false,msg:"please put date in MM/DD/YYYY formate"})}
+
             const findCenter=await slotModel.find(center)
             if(findCenter.length==0)return res.status(200).send({status:true,msg:"No data found with this query"})
             return res.status(200).send({status:true,data:findCenter})

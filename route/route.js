@@ -18,7 +18,7 @@ Router.get("/slot",getSlots)
 Router.get("/admin",userData)
 
 
-
+Router.all("*/",(req,res)=>res.status(404).send({status:false,msg:"Not found"}))
 
 
 
