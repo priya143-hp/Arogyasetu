@@ -59,11 +59,11 @@ let second=0
 
 for(i=0;i<slots.length;i++){
     total+= 1400-slots[i].totalvaccine
-    first+=first+slots[i].totalFirst
+    first+=slots[i].totalFirst
     second+=second+slots[i].totalSecond
 }
 
-return res.status(200).send({status:true,data:`total vaccin taken=${total}   total 1st dose taken ${first} total 2nd dose taken ${second}`})
+return res.status(200).send({status:true,data:`total vaccin taken ${total} , total 1st dose taken ${first} , total 2nd dose taken ${second}`})
 }
 
 

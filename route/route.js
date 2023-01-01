@@ -8,8 +8,8 @@ const {authentication,authorization}= require("../auth/auth")
 
 Router.post("/user",creatuser)
 Router.post("/login",login)
-Router.post("/user/:userId",slotBook)
-Router.put("/user/:userId",slotDelete)
+Router.post("/user/:userId",authentication,authorization,slotBook)
+Router.put("/user/:userId",authentication,authorization,slotDelete)
 
 
 Router.post("/slot",slots)
