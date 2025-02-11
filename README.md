@@ -1,4 +1,5 @@
 # Arogyasetu
+Aarogya Setu (translation from Sanskrit: the bridge to health) is an Indian COVID-19 "contact tracing, syndromic mapping and self-assessment" digital service, primarily a mobile app, developed by the National Informatics Centre under the Ministry of Electronics and Information Technology (MeitY).
 
 
 ## Task Description:
